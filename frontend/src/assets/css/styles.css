@@ -431,3 +431,219 @@ section {
     width: 100%;
   }
 }
+
+/* Equipment Card */
+.equipment-card {
+  border: 1px solid var(--color-gray-medium);
+  padding: 0; /* Override default card padding */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* For grid, this will be handled by parent */
+  max-width: 350px; /* Max width for individual cards */
+  box-shadow: var(--shadow-light);
+  transition: transform 0.2s ease-in-out;
+}
+
+.equipment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.equipment-image {
+  width: 100%;
+  height: 200px; /* Fixed height for consistent image display */
+  overflow: hidden;
+  background-color: var(--color-gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.equipment-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+.equipment-details {
+  padding: var(--spacing-medium);
+  flex-grow: 1; /* Allows details section to take up remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.equipment-details h3 {
+  font-size: 1.5rem;
+  color: var(--color-dark-blue);
+  margin-bottom: var(--spacing-small);
+}
+
+.equipment-category {
+  font-size: 0.9rem;
+  color: var(--color-accent-orange);
+  margin-bottom: var(--spacing-small);
+  font-weight: bold;
+}
+
+.equipment-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: var(--spacing-medium);
+  flex-grow: 1; /* Pushes seller info to the bottom */
+}
+
+.equipment-price, .equipment-condition {
+  font-weight: bold;
+  color: var(--color-primary-blue);
+  margin-bottom: var(--spacing-small);
+}
+
+.seller-info {
+  border-top: 1px solid var(--color-gray-light);
+  padding-top: var(--spacing-small);
+  margin-top: var(--spacing-medium);
+}
+
+.seller-info h4 {
+  font-size: 1rem;
+  color: var(--color-primary-blue);
+  margin-bottom: var(--spacing-extra-small);
+}
+
+.seller-info p {
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-extra-small);
+  color: #666;
+}
+
+.seller-info a {
+  color: var(--color-primary-blue);
+  text-decoration: underline;
+}
+
+.contact-seller-btn {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  width: 100%;
+  margin-top: var(--spacing-medium);
+}
+
+.contact-seller-btn:hover {
+  background-color: var(--color-dark-blue);
+}
+
+/* Equipment Page specific styles */
+.equipments-page {
+  padding-top: var(--spacing-large);
+  padding-bottom: var(--spacing-large);
+}
+
+.equipments-page h1 {
+  color: var(--color-primary-blue);
+  margin-bottom: var(--spacing-small);
+}
+
+.equipments-page .description-text {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-large);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.equipment-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-large);
+  gap: var(--spacing-medium); /* Space between filter elements */
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-small);
+}
+
+.btn-filter-active {
+  background-color: var(--color-accent-orange);
+  color: var(--color-white);
+  border: 1px solid var(--color-accent-orange);
+  padding: 8px 15px;
+  border-radius: var(--border-radius-small);
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-filter-inactive {
+  background-color: var(--color-white);
+  color: var(--color-primary-blue);
+  border: 1px solid var(--color-primary-blue);
+  padding: 8px 15px;
+  border-radius: var(--border-radius-small);
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-filter-inactive:hover {
+  background-color: var(--color-light-blue);
+  color: var(--color-primary-blue);
+}
+
+.search-input {
+  padding: var(--spacing-small);
+  border: 1px solid var(--color-gray-medium);
+  border-radius: var(--border-radius-small);
+  font-size: var(--font-size-base);
+  width: 250px; /* Fixed width for search input */
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-medium);
+  justify-items: center; /* Center items in the grid */
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Responsive adjustments for Equipment Page */
+@media (max-width: 768px) {
+  .equipment-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .category-tabs {
+    justify-content: center;
+  }
+  .search-input {
+    width: 100%; /* Full width on smaller screens */
+    margin-top: var(--spacing-medium);
+  }
+}
+
+/* Not Found Page */
+.not-found-page {
+  padding: var(--spacing-extra-large) 0;
+  min-height: 50vh; /* Ensure it takes up some vertical space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found-page h1 {
+  font-size: 3rem;
+  color: var(--color-accent-orange);
+  margin-bottom: var(--spacing-medium);
+}
+
+.not-found-page p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: var(--spacing-large);
+}
