@@ -1,0 +1,36 @@
+:root {
+  /* Colors */
+  --color-primary-blue: #002b5c; /* Deep Blue - for Header, Footer */
+  --color-accent-orange: #ff6f00; /* Bright Orange - for highlights, hover effects */
+  --color-secondary-yellow: #ffc107; /* Bold Yellow - for Hero background, buttons */
+  --color-dark-blue: #001f3f; /* Dark Blue - for main headings on yellow */
+  --color-light-blue: #e0f2f7; /* Light Blue - for About Us background */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-light: #f8f8f8; /* Soft neutral for content areas */
+  --color-gray-medium: #cccccc;
+  --color-green-dark: #004d40; /* Dark Green - for Tournament headers */
+
+  /* Fonts */
+  --font-family-primary: 'Arial', sans-serif; /* Or 'Roboto', 'Open Sans' etc. */
+  --font-size-base: 16px;
+
+  /* Spacing */
+  --spacing-extra-small: 5px;
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 40px;
+  --spacing-extra-large: 60px;
+
+  /* Border Radius */
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 50%; /* For circular elements */
+
+  /* Box Shadows */
+  --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+}

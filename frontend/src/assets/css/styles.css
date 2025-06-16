@@ -1,0 +1,433 @@
+/* Import variables first */
+@import './variables.css';
+
+/* Universal Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body and Typography */
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: #333;
+  background-color: var(--color-gray-light); /* Soft neutral background for the whole site */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: var(--spacing-medium);
+  color: var(--color-dark-blue); /* Default heading color */
+}
+
+p {
+  margin-bottom: var(--spacing-small);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary-blue);
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--color-accent-orange);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container for content sections */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-large) var(--spacing-medium);
+}
+
+/* Buttons - General Styles */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-small) var(--spacing-medium);
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  text-align: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-dark-blue);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary-yellow);
+  color: var(--color-primary-blue);
+  border: 1px solid var(--color-primary-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-blue);
+  color: var(--color-secondary-yellow);
+}
+
+.btn-accent {
+  background-color: var(--color-accent-orange);
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+.btn-accent:hover {
+  background-color: #e65c00; /* Slightly darker orange */
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-light);
+  padding: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Flexbox utilities */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-medium);
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+/* Text alignment */
+.text-center {
+  text-align: center;
+}
+
+/* Section spacing */
+section {
+  padding: var(--spacing-large) 0;
+}
+
+/* Header */
+.header {
+  background-color: var(--color-primary-blue);
+  padding: var(--spacing-small) 0;
+  box-shadow: var(--shadow-medium);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo img {
+  height: 60px; /* Adjust as needed for your logo size */
+  width: auto;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--spacing-medium);
+}
+
+.main-nav li a {
+  color: var(--color-white);
+  font-weight: bold;
+  padding-bottom: var(--spacing-extra-small); /* For underline effect */
+  position: relative;
+}
+
+.main-nav li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-accent-orange);
+  transition: width var(--transition-speed) ease-in-out;
+}
+
+.main-nav li a:hover::after,
+.main-nav li a.active-link::after {
+  width: 100%;
+}
+/* Footer */
+.footer {
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  padding-top: var(--spacing-large);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-medium);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: var(--spacing-medium);
+}
+
+.footer-heading {
+  color: var(--color-secondary-yellow);
+  margin-bottom: var(--spacing-small);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-extra-small);
+}
+
+.footer-contact p i {
+  margin-right: var(--spacing-small);
+  color: var(--color-accent-orange); /* Orange accented icons */
+}
+
+.footer-links ul {
+  padding-left: 0;
+}
+
+.footer-links li {
+  margin-bottom: var(--spacing-extra-small);
+}
+
+.footer-links a {
+  color: var(--color-white);
+  transition: color var(--transition-speed) ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent-orange);
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--spacing-medium);
+  margin-top: var(--spacing-small);
+}
+
+.social-icons a {
+  color: var(--color-secondary-yellow); /* Yellow fill for icons */
+  font-size: 2.2rem;
+  transition: transform var(--transition-speed) ease;
+}
+
+.social-icons a:hover {
+  color: var(--color-accent-orange); /* Orange hover accent */
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: var(--spacing-medium) 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Optional Footer Contact Form (if enabled) */
+.footer-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  margin-top: var(--spacing-medium);
+}
+
+.footer-contact-form input,
+.footer-contact-form textarea {
+  padding: var(--spacing-small);
+  border-radius: var(--border-radius-small);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
+.footer-contact-form input::placeholder,
+.footer-contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact-form .btn-accent {
+  width: fit-content;
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-contact, .footer-links, .footer-social {
+    width: 100%;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: var(--color-secondary-yellow); /* Bold Yellow background */
+  padding: var(--spacing-extra-large) 0;
+  display: flex;
+  align-items: center;
+  min-height: 450px; /* Adjust height as needed */
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-large);
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  color: var(--color-dark-blue); /* Dark blue heading */
+  margin-bottom: var(--spacing-medium);
+  line-height: 1.1;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--color-dark-blue);
+  margin-bottom: var(--spacing-large);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-medium);
+}
+
+/* Specific button styles for hero section */
+.hero-buttons .btn-secondary {
+  background-color: var(--color-secondary-yellow);
+  color: var(--color-primary-blue);
+  border: 2px solid var(--color-primary-blue);
+  font-weight: bold;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: var(--color-primary-blue);
+  color: var(--color-secondary-yellow);
+}
+
+.hero-buttons .btn-accent {
+  background-color: var(--color-accent-orange);
+  color: var(--color-white);
+  font-weight: bold;
+  border: none;
+}
+
+.hero-buttons .btn-accent:hover {
+  background-color: #e65c00; /* Slightly darker orange */
+}
+
+
+.hero-graphic {
+  flex: 0 0 auto; /* Don't grow or shrink, take only necessary space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px; /* Fixed width for the circular graphic */
+  height: 250px; /* Fixed height for the circular graphic */
+  background-color: var(--color-white); /* White background for the circle */
+  border-radius: var(--border-radius-large); /* Makes it circular */
+  box-shadow: 0 0 0 15px rgba(0, 43, 92, 0.1); /* Soft blue accents, outer ring */
+  animation: pulse 2s infinite ease-in-out; /* Optional subtle animation */
+}
+
+.hero-graphic img {
+  max-width: 80%; /* Adjust size of logo inside the circle */
+  height: auto;
+  border-radius: var(--border-radius-large); /* Ensure image itself is circular if it has a background */
+}
+
+/* Keyframe for subtle pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(0, 43, 92, 0.1);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 20px rgba(0, 43, 92, 0.15);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(0, 43, 92, 0.1);
+  }
+}
+
+/* Responsive adjustments for Hero Section */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-graphic {
+    margin-top: var(--spacing-large);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}
